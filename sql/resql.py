@@ -13,6 +13,7 @@ engine = coon_mysql().connect()
 
 # 查询全部数据
 def select_all(table_name='hi'):
+    # engine = coon_mysql().connect()
     sql = 'select * from %s' % table_name
     results = engine.execute(text(sql))
     engine.closs()
@@ -22,7 +23,7 @@ def select_all(table_name='hi'):
 def select_name(name, table_name='hi'):
     sql = 'select * from %s where name = %s' % (table_name, name)
     results = engine.execute(text(sql))
-    engine.closs()
+    # engine.closs()
     return results
 
 
@@ -92,6 +93,10 @@ def updata_mysql_id(id, name, table_name='hi'):
         return e
 
 
-# if __name__ == '__main__':
-#     # insert_mysql(6,'hello')
-#     print(delete_mysql_id(5))
+if __name__ == '__main__':
+    # insert_mysql(6,'hello')
+    # print(delete_mysql_id(5))
+    datas = select_all()
+
+    print([i for i in datas])
+    # print(datas)

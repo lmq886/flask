@@ -2,7 +2,7 @@ import pymysql
 from sqlalchemy import create_engine, MetaData
 from sqlalchemy.orm import sessionmaker
 
-from user import User as hi
+# from user import User as hi
 
 
 def coon_mysql():
